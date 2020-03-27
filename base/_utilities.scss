@@ -1,0 +1,34 @@
+//align text center utility
+.u-center {
+    text-align: center;
+}
+
+.heading {
+    position: relative;
+    font-size: 2.4rem;
+    color: $text-color;
+    font-weight: normal;
+    &::after {
+        content: "";
+        width: 6rem;
+        position: absolute;
+        left: 50%;
+        top: 90%;
+        transform: translateX(-50%);
+        height: 0.4rem;
+        font-weight: 100;
+        background-color: $primary-color;
+    }
+}
+
+.u-margin-bottom {
+    margin-bottom: 5rem;
+}
+
+.u-margin-top-small {
+    margin-top: 1rem;
+}
+
+.u-margin-top-big {
+    margin-top: 6rem;
+}

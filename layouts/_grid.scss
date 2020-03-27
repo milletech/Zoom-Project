@@ -1,0 +1,15 @@
+//The row
+@import "../mixins";
+.row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 2rem 3rem;
+    grid-gap: 50px;
+    &__catalogue {
+        padding: 4rem 10rem;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        @include respond(tab-port) {
+            padding: 4rem 5rem;
+        }
+    }
+}

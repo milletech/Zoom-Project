@@ -1,0 +1,192 @@
+//THE HEADER
+@import "../mixins";
+.header {
+    background-image: url("../images/man-taking-photo-of-the-great-pyramid-1851481.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 95vh;
+    position: relative;
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 3rem;
+        color: $text-color;
+        &__burger-icon {
+            @include respond(tab-port) {
+                display: inline-block;
+            }
+            display:none;
+            background-color: $primary-color;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            text-align: center;
+            span {
+                font-size: 2rem;
+                margin-top: 8px;
+            }
+        }
+        &__logo-box {
+            h2 {
+                font-size: 3.1rem;
+            }
+        }
+        &__navlist {
+            @include respond(tab-port) {
+                display: none;
+            }
+            list-style-type: none;
+        }
+        &__item {
+            display: inline-block;
+            position: relative;
+            &:not(:last-of-type) {
+                margin-right: 4rem;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                width: 5px;
+                height: 0px;
+                background-color: $primary-color;
+                top: -20px;
+                left: 50%;
+                transition: all .5s;
+            }
+            &:hover {
+                &::after {
+                    height: 25px;
+                }
+            }
+        }
+        &__link {
+            text-decoration: none;
+            position: relative;
+            color: $text-color;
+            font-size: $default-font-size;
+            font-weight: 600;
+            &::before {
+                content: "";
+                position: absolute;
+                top: -90%;
+                left: 50%;
+                width: 0.5rem;
+                height: 2rem;
+                background-color: $primary-color;
+                transition: all .5s;
+                display: none;
+            }
+            &:hover &::before {
+                display: inline-block;
+            }
+        }
+        &__search-box {
+            transition: all 0.5s;
+            span {
+                font-size: 1.9rem;
+                //font-weight: lighter;
+                position: relative;
+                &::after {
+                    content: "";
+                    height: 3.7rem;
+                    width: 3.7rem;
+                    background-color: transparent;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    border-radius: 50%;
+                    border: dashed 3px $primary-color;
+                }
+            }
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.2);
+                //backface-visibility: hidden;
+            }
+            &:hover {
+                span ::after {
+                    animation-name: rotate;
+                    animation-duration: 2s;
+                }
+            }
+        }
+    }
+    .display {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all .8s;
+        .navbar__logo-box {
+            color: $primary-color;
+            display: none;
+        }
+        span {
+            @include respond(tab-port) {
+                font-size: 4rem;
+            }
+            position: relative;
+            font-size: 5rem;
+            padding: 13px;
+            transition:all .5s;
+            width:10rem;
+            height:7rem;
+            &:hover {
+                transform: scale(1.2);
+                color: $primary-color;
+                &::after {
+                    width: 110%;
+                    height: 110%;
+                    border-color: $primary-color;
+                    border-top-color: transparent;
+                    border-left-color: transparent;
+                }
+                &::before {
+                    width: 110%;
+                    height: 110%;
+                    border-color: $primary-color;
+                    border-bottom-color: transparent;
+                    border-right-color: transparent;
+                }
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                width: 30%;
+                height: 30%;
+                border: solid $text-color 4px;
+                bottom: 0;
+                right: 0;
+                border-top-color: transparent;
+                border-left-color: transparent;
+                transition: all .6s;
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                width: 30%;
+                height: 30%;
+                border: solid $text-color 4px;
+                top: 0;
+                left: 0;
+                border-bottom-color: transparent;
+                border-right-color: transparent;
+                transition: all .6s;
+            }
+            /*&::after {
+                bottom: 0;
+                right: 0;
+                border-top-color: transparent;
+                border-left-color: transparent;
+            }
+            &::before {
+                top: 0;
+                left: 0;
+                border-bottom-color: transparent;
+                border-right-color: transparent;
+            }*/
+        }
+    }
+}

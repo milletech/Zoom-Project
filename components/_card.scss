@@ -1,0 +1,77 @@
+// card
+.card {
+    @include respond(phone) {
+        padding: 3rem 2rem;
+    }
+    border: solid 2px $primary-color;
+    padding: 2rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    &__image-box {
+        height: 11rem;
+        width: 11rem;
+        border-radius: 50%;
+        margin: 0 auto;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        &--1 {
+            background-image: url("../images/face-facial-hair-fine-looking-guy-614810.jpg");
+        }
+        &--2 {
+            background-image: url("../images/photography-of-a-guy-wearing-green-shirt-1222271.jpg");
+        }
+        &--3 {
+            background-image: url("../images/women-s-white-and-black-button-up-collared-shirt-774909.jpg");
+        }
+        &--4 {
+            background-image: url("../images/adult-beard-boy-casual-220453.jpg");
+        }
+        &--5 {
+            background-image: url("../images/face-facial-hair-fine-looking-guy-614810.jpg");
+        }
+        &--6 {
+            background-image: url("../images/adult-beard-boy-casual-220453.jpg");
+        }
+    }
+    &__list {
+        list-style-type: none;
+        font-size: 1.7rem;
+        display: inline-block;
+        margin: auto 0;
+    }
+    &__item {
+        transition: all .5s;
+        &:not(:last-of-type) {
+            margin-bottom: 10px;
+        }
+        span {
+            margin-left: 5px;
+            color: $primary-color;
+            // font-size: 1.8rem;
+        }
+        &--name {
+            color: $primary-color;
+        }
+        &:hover {
+            transform: translateY(-1.5px);
+            span {
+                color: #f4f4f4;
+            }
+        }
+    }
+    &__link {
+        text-decoration: none;
+        background-color: $primary-color-light;
+        color: $text-color;
+        padding: 0.3rem;
+        font-size: 1.4rem;
+        letter-spacing: 0.2px;
+        font-weight: 500;
+        &:hover {
+            transform: translate(10px);
+            background-color: $primary-color;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+    }
+}
